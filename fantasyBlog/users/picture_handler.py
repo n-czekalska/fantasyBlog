@@ -11,7 +11,7 @@ def add_avatar(upload, username):
 
     filepath = os.path.join(current_app.root_path, 'static\\avatars', newname)
 
-    output_size = (200,200)
+    output_size = (100,100)
     picture = Image.open(upload)
     picture.save(filepath)
 

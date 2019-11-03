@@ -8,7 +8,7 @@ from datetime import datetime
 def load_user(user_id):
     return User.query.get(user_id)
 
-class User(db.Model,UserMixin):
+class User(db.Model,UserMixin):  #UserMixin.is_authenticated()
 
     __tablename__ = 'users'
 
@@ -26,7 +26,7 @@ class User(db.Model,UserMixin):
         self.password_hashed = generate_password_hash(password)
 
     def check_password(self,password):
-        return check_password_hash(self.password_hash,password)
+        return check_password_hash(self.password_hashed,password)
 
     def __repr__(self):
         return f"Username {self.username}"

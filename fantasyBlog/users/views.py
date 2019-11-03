@@ -31,7 +31,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
 
-        user = User.query.filter_by(email=form.email.data).first()
+        user = User.query.filter_by(username=form.username.data).first()
 
         if user.check_password(form.password.data) and user is not None:
 
@@ -58,9 +58,9 @@ def settings():
     form = UpdateUserForm()
     if form.validate_on_submit():
 
-        if form.picture.data:
+        if form.avatar.data:
             username = current_user.username
-            picture = add_avatar(form.picture.data,username)
+            picture = add_avatar(form.avatar.data,username)
             current_user.avatar = picture
 
         current_user.username = form.username.data
