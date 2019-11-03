@@ -28,8 +28,10 @@ login_manager.login_view = 'users.login'
 
 from fantasyBlog.core.views import core
 from fantasyBlog.users.views import users
+from fantasyBlog.blog_posts.views import blog_posts
 from fantasyBlog.error_pages.handlers import error_pages
 
 app.register_blueprint(core)
 app.register_blueprint(users)
+app.register_blueprint(blog_posts)
 app.register_blueprint(error_pages)
