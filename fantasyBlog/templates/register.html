@@ -6,19 +6,23 @@
         <div class="row form-group">
             {{form.hidden_tag()}}
         </div>
-        <div class="row">
-            {{form.email.label}}{{form.email(class="form-control")}}
+        <div class="form-group">
+            {{form.email.label(class="form-group")}}
+            {{form.email(class="form-control")}}
         </div>
-        <div class="row">
-            {{form.username.label}}{{form.username(class="form-control")}}
+        <div class="form-group">
+            {{form.username.label(class="form-group")}}
+            {{form.username(class="form-control")}}
         </div>
-        <div class="row">
-            {{form.password.label}}{{form.password(class="form-control")}}
+        <div class="form-group">
+            {{form.password.label(class="form-group")}}
+            {{form.password(class="form-control")}}
         </div>
-        <div class="row">
-            {{form.confirm.label}}{{form.confirm(class="form-control")}}
+        <div class="form-group">
+            {{form.confirm.label(class="form-group")}}
+            {{form.confirm(class="form-control")}}
         </div>
-        <div class="row">
+        <div class="form-group">
             {{form.submit()}}
         </div>
     </div>

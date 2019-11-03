@@ -60,8 +60,8 @@ def account():
 
         if form.picture.data:
             username = current_user.username
-            pic = add_avatar(form.picture.data,username)
-            current_user.profile_image = pic
+            picture = add_avatar(form.picture.data,username)
+            current_user.avatar = picture
 
         current_user.username = form.username.data
         current_user.email = form.email.data
@@ -72,6 +72,6 @@ def account():
         form.username.data = current_user.username
         form.email.data = current_user.email
 
-    profile_image = url_for('static',filename='profile_pics/'+current_user.profile_image)
-    return render_template('account.html',profile_image=profile_image,form=form)
+    avatar = url_for('static',filename='avatars/'+current_user.avatar)
+    return render_template('account.html',avatar=avatar,form=form)
 

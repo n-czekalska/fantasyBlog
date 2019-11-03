@@ -2,17 +2,17 @@
 
 {% block content %}
 <form method="POST">
-    <div class="col">
-            {{form.hidden_tag()}}
-        <div class="row">
-            {{form.username.label}}{{form.username(class="form-control")}}
-        </div>
-        <div class="row">
-            {{form.password.label}}{{form.password(class="form-control")}}
-        </div>
-        <div class="row">
-            {{form.submit()}}
-        </div>
+    {{form.hidden_tag()}}
+    <div class="form-group">
+        {{form.username.label(class="form-group")}}
+        {{form.username(class="form-control")}}
+    </div>
+    <div class="form-group">
+        {{form.password.label(class="form-group")}}
+        {{form.password(class="form-control")}}
+    </div>
+    <div class="form-group">
+        {{form.submit()}}
     </div>
 </form>
 {% endblock %}
