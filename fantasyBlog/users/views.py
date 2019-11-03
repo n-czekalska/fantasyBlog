@@ -51,9 +51,9 @@ def logout():
     logout_user()
     return redirect(url_for("core.index"))
 
-@users.route('/account',methods=['GET','POST'])
+@users.route('/settings',methods=['GET','POST'])
 @login_required
-def account():
+def settings():
 
     form = UpdateUserForm()
     if form.validate_on_submit():
@@ -66,12 +66,18 @@ def account():
         current_user.username = form.username.data
         current_user.email = form.email.data
         db.session.commit()
-        return redirect(url_for('users.account'))
+        return redirect(url_for('users.settings'))
 
     elif request.method == "GET":
         form.username.data = current_user.username
         form.email.data = current_user.email
 
     avatar = url_for('static',filename='avatars/'+current_user.avatar)
-    return render_template('account.html',avatar=avatar,form=form)
+    return render_template('settings.html',avatar=avatar,form=form)
 
+@users.route('/<username>')
+def account(username):
+    page = request.args.get('page', 1, type=int) #cycling through pages of posts
+    user = User.query.filter_by(username=username).first_or_404()
+    blog_posts = BlogPost.query.filter_by(author=user).order_by(BlogPost.date.desc()).paginate(page=page, per_page=5)
+    return render_template('account.html')
