@@ -32,7 +32,7 @@ def blog_post(post_id):
 
 @blog_posts.route("/<int:post_id>/edit", methods=['GET', 'POST'])
 @login_required
-def update(post_id):
+def edit(post_id):
     blog_post = BlogPost.query.get_or_404(post_id)
     if blog_post.author != current_user:
         abort(403)
@@ -40,13 +40,13 @@ def update(post_id):
     form = BlogPostForm()
     if form.validate_on_submit():
         blog_post.title = form.title.data
-        blog_post.text = form.text.data
+        blog_post.content = form.content.data
         db.session.commit()
-        return redirect(url_for('blog_posts.blog_post', blog_post_id=blog_post.id))
+        return redirect(url_for('blog_posts.blog_post', post_id=blog_post.id))
     
     elif request.method == 'GET':
         form.title.data = blog_post.title
-        form.text.data = blog_post.text
+        form.content.data = blog_post.content
     return render_template('create_post.html', title='Update',
                            form=form)
 

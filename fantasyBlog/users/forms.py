@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileAllowed, FileField #update avatar
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Email, EqualTo
 from wtforms import ValidationError
 
@@ -31,7 +31,7 @@ class RegistrationForm(FlaskForm):
 class UpdateUserForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     username = StringField('Username', validators=[DataRequired()])
-    avatar = FileField('Update avatar', validators=[FileAllowed(['jpg', 'png'])])
+    avatar = SelectField('Select avatar', choices=[])
     submit = SubmitField('Save')
 
     def check_email(self, field):
@@ -40,4 +40,10 @@ class UpdateUserForm(FlaskForm):
     def check_username(self, field):
         if User.query.filter_by(username=field.data).first():
             raise ValidationError('This username is already in use')
+
+class DisplayUserForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    username = StringField('Username', validators=[DataRequired()])
+    avatar = FileField('Update avatar', validators=[FileAllowed(['jpg', 'png'])])
+    submit = SubmitField('Save')
     

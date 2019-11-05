@@ -3,7 +3,7 @@ from flask import render_template,url_for,redirect,request,Blueprint
 from flask_login import login_user, current_user, logout_user, login_required
 from fantasyBlog import db
 from fantasyBlog.models import User, BlogPost
-from fantasyBlog.users.forms import RegistrationForm,LoginForm,UpdateUserForm
+from fantasyBlog.users.forms import RegistrationForm,LoginForm,UpdateUserForm, DisplayUserForm
 from fantasyBlog.users.picture_handler import add_avatar
 
 users = Blueprint('users',__name__)
@@ -74,6 +74,7 @@ def settings():
 
     avatar = url_for('static',filename='avatars/'+current_user.avatar)
     return render_template('settings.html',avatar=avatar,form=form)
+
 
 @users.route('/<username>')
 def account(username):
