@@ -60,11 +60,12 @@ def settings():
 
         if form.avatar.data:
             username = current_user.username
-            picture = add_avatar(form.avatar.data,username)
+            picture = form.avatar.data
             current_user.avatar = picture
 
         current_user.username = form.username.data
         current_user.email = form.email.data
+        avatar = add_avatar(form.avatar.data)
         db.session.commit()
         return redirect(url_for('users.settings'))
 

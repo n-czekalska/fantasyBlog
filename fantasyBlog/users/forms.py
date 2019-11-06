@@ -31,7 +31,11 @@ class RegistrationForm(FlaskForm):
 class UpdateUserForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     username = StringField('Username', validators=[DataRequired()])
-    avatar = SelectField('Select avatar', choices=[])
+    avatar = SelectField('Select avatar', choices=[('anvil.png', 'Anvil'), ('bag_of_coins.png','Bag of coins'),('pattern.png','Celtic knots'), ('clover.png','Clover'),
+                                                   ('dragon.png', 'Dragon'),('feather.png','Feather'), ('fish.png','Fish'),('goblet.png','Goblet'),
+                                                   ('helm.png','Helm'),('herb.png','Herb'),('hunting.png','Hunter'),('carpentry.png','Log and saw'),('mining.png','Miner'),
+                                                   ('potion.png', 'Potion'),('scroll.png','Magic scroll'), ('shield.png','Shield'),('skull.png','Skull'),
+                                                   ('staff.png', 'Staff'),('star.png','Star'), ('sword.png','Sword'),('tailoring.png','Tailor'),('tower.png','Tower'),('tree.png','Tree'),('wheat.png', 'Wheat')])
     submit = SubmitField('Save')
 
     def check_email(self, field):
@@ -44,6 +48,4 @@ class UpdateUserForm(FlaskForm):
 class DisplayUserForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     username = StringField('Username', validators=[DataRequired()])
-    avatar = FileField('Update avatar', validators=[FileAllowed(['jpg', 'png'])])
-    submit = SubmitField('Save')
     

@@ -3,11 +3,11 @@
   <div class="jumbotron">
     <div align='center'>
       <h5>Update settings</h5>
-      <img align='center' src="{{url_for('static',filename='avatars/'+current_user.avatar)}}">
     </div>
   </div>
 
   <div class="container">
+      <img align='center' src="{{url_for('static',filename='avatars/'+current_user.avatar)}}">
     <form method="POST" action="" enctype="multipart/form-data">
         {{form.hidden_tag()}}
       <div class="form-group">

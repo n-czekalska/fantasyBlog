@@ -13,7 +13,7 @@ class User(db.Model,UserMixin):  #UserMixin.is_authenticated()
     __tablename__ = 'users'
 
     id = db.Column(db.Integer,primary_key=True)
-    avatar = db.Column(db.String(64),nullable=False,default='default.png')
+    avatar = db.Column(db.String(64),nullable=False,default='dragon.png')
     email = db.Column(db.String(64),unique=True,index=True)
     username = db.Column(db.String(64),unique=True,index=True)
     password_hashed = db.Column(db.String(128))
