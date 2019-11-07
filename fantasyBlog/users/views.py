@@ -4,7 +4,6 @@ from flask_login import login_user, current_user, logout_user, login_required
 from fantasyBlog import db
 from fantasyBlog.models import User, BlogPost
 from fantasyBlog.users.forms import RegistrationForm,LoginForm,UpdateUserForm, DisplayUserForm
-from fantasyBlog.users.picture_handler import add_avatar
 
 users = Blueprint('users',__name__)
 
@@ -22,8 +21,6 @@ def register():
         return redirect(url_for('users.login'))
 
     return render_template('register.html',form=form)
-
-
 
 @users.route('/login',methods=['GET','POST'])
 def login():
@@ -65,7 +62,7 @@ def settings():
 
         current_user.username = form.username.data
         current_user.email = form.email.data
-        avatar = add_avatar(form.avatar.data)
+        avatar = form.avatar.data
         db.session.commit()
         return redirect(url_for('users.settings'))
 
