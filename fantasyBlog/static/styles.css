@@ -21,6 +21,10 @@ header {
   float: left;
 }
 
+#background-index {
+  background-image: url("./backgrounds/book.png");
+}
+
 .title {
   position: relative;
   font-family: 'Chewy', cursive;
@@ -35,13 +39,14 @@ header {
   float: right;
 }
 
-.link {
+.link .link-last {
   position: relative;
   font-family: 'Chewy', cursive;
   font-size: 15px;
   margin-bottom: 20px;
   margin-right: 8px;
   display: inline-block;
+  color: white;
 }
 .link-last {
     margin-right: 0px;
