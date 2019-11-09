@@ -93,46 +93,12 @@ footer {
   border-radius: 20%;
 }
 
-
-@media (max-width: 575px) {
-
-  #header-container .icon {
-    display: none;
-  }
-}
-
-
-@media (min-width: 576px) {
-
-  #header-container,
-  #footer-container {
-    width: 576px;
-  }
-}
-
-@media (min-width: 768px) {
-
-  #header-container,
-  #footer-container {
-    width: 768px;
-  }
-}
-
-
-@media (min-width: 1200px) {
-
-  #header-container,
-  #footer-container {
-    width: 1200px;
-  }
-}
-
 .post
 {
 	position: relative;
-	width: 100%;
+  width: 100%;
+  height: 30%;
 }
-
 
 .post-background
 {
@@ -144,7 +110,7 @@ footer {
 .post-container
 {
 	position: relative;
-	width: 600px;
+	width: 75%;
 	height: 300px;
 	margin-left: auto;
   margin-right: auto;
@@ -200,10 +166,11 @@ footer {
 }
 
 #post-container-0 {
-  background-image: url("./backgrounds/red.jpg");
+  background-image: url("./backgrounds/hobbiton.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .text
 {
 	position: relative;
@@ -217,8 +184,9 @@ footer {
 .post-sidebar {
     padding-left: 15px;
     padding-right: 50px;
-    margin-top: 2%;
+    margin-top: 5%;
 }
+
 hr {
   color: lightgray;
 }
@@ -235,4 +203,48 @@ hr {
 
 #search:focus {
   outline : none;
+}
+
+
+@media (max-width: 575px) {
+
+  .post-container {
+    height: 75%;
+  }
+}
+
+
+@media (min-width: 576px) {
+
+  #header-container,
+  #footer-container {
+    width: 576px;
+  }
+
+  .post-container {
+    height: 75%;
+  }
+}
+
+@media (min-width: 768px) {
+
+  #header-container,
+  #footer-container {
+    width: 768px;
+  }
+  .post-container {
+    height: 70%;
+  }
+}
+
+
+@media (min-width: 1200px) {
+
+  #header-container,
+  #footer-container {
+    width: 1200px;
+  }
+  .post-container {
+    height: 70%;
+  }
 }
