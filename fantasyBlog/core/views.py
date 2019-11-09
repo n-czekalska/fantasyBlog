@@ -15,7 +15,7 @@ def index():
         blog_posts = BlogPost.query
         if searchForm.validate_on_submit():
             blog_posts = blog_posts.filter(BlogPost.title.like('%' + searchForm.data['search'] + '%'))
-        blog_posts = blog_posts.order_by(BlogPost.date.desc()).paginate(page=page, per_page=10)
+        blog_posts = blog_posts.order_by(BlogPost.date.desc()).paginate(page=page, per_page=4)
     
     return render_template('index.html',blog_posts=blog_posts,searchForm=searchForm)
 
