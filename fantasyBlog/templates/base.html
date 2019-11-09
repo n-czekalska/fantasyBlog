@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="./../static/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Chewy|Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Marcellus&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -18,8 +17,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" type="text/css" href="./../static/styles.css">
     <title>fantasyBlog</title>
 </head>
+
 <body>
     <header>
         <div id="header-container">
@@ -36,42 +37,34 @@
                     <div class="link">Change Settings</div>
                 </a>
                 <a href="{{url_for('users.logout')}}">
-                    <div class="link-last">Log Out</div>
+                    <div class="link link-last">Log Out</div>
                 </a>
                 {% else %}
                 <a href="{{url_for('users.login')}}">
                     <div class="link">Log In</div>
                 </a>
                 <a href="{{url_for('users.register')}}">
-                    <div class="link-last">Register</div>
+                    <div class="link link-last">Register</div>
                 </a>
                 {% endif %}
             </div>
     </header>
-    <div class="container">
         {% block content %}
 
         {% endblock %}
-    </div>
     <footer>
-            <div id="footer-container">
-                <div class="footer-column">
-                    <div class="title">ABOUT</div>
-                    <div class="picture-footer img-circle"></div>
-                    <div class="text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin odio sit
-                        amet auctor porta. Curabitur sed placerat nunc. Proin at euismod neque. Nulla ut sem et orci
-                        condimentum rutrum ac cursus ante. Ut dolor nibh, euismod vitae risus ac, pulvinar aliquam dui.
-                        Praesent id tellus rhoncus, viverra sapien sed, sagittis enim.
-                    </div>
-                </div>
-                <div class="footer-column footer-column-last">
-                    <div class="title">VIEW RESUME</div>
-                    <a href="" target="_blank">
-                        <div class="icon icon-resume"></div>
-                    </a>
+        <div id="footer-container">
+            <div class="footer-column">
+                <div class="title">ABOUT</div>
+                <div class="picture-footer img-circle"></div>
+                <div class="text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin odio sit
+                    amet auctor porta. Curabitur sed placerat nunc. Proin at euismod neque. Nulla ut sem et orci
+                    condimentum rutrum ac cursus ante. Ut dolor nibh, euismod vitae risus ac, pulvinar aliquam dui.
+                    Praesent id tellus rhoncus, viverra sapien sed, sagittis enim.
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 </body>
 
 </html>
