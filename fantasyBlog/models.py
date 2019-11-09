@@ -33,7 +33,7 @@ class User(db.Model,UserMixin):  #UserMixin.is_authenticated()
 
 
 class BlogPost(db.Model):
-
+    __searchable__ = ['title']
     users = db.relationship(User)
 
     id = db.Column(db.Integer,primary_key=True)

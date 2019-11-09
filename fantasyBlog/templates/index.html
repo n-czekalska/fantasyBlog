@@ -23,27 +23,30 @@
   </div>
   <div class="col-3">
     <div class="post post-sidebar">
-          <div class="post-text-title"> Blog Search </div>
+        <div class="post-text-title"> Blog Search </div>
         <hr />
-        <input type="text" value="" placeholder="Search" id="search">
-        <input type="submit" id="searchsubmit" value="Search">
-      </div>
+      <form method="POST" style="display: inline;" action="{{ url_for('core.index') }}" name="search">
+        {{ searchForm.hidden_tag() }}
+        {{ searchForm.search(size=20)}}
+        <input type="submit" value="Search">
+      </form>
     </div>
   </div>
+</div>
 
-  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-      {% for page_num in blog_posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
-      {% if blog_posts.page == page_num %}
-      <li class="page-item disabled">
-        <a class="page-link" href="{{ url_for('core.index', page=page_num) }}">{{ page_num }}</a></li>
-      </li>
-      {% else %}
-      <li class="page-item"><a class="page-link" href="{{ url_for('core.index', page=page_num) }}">{{ page_num }}</a>
-      </li>
-      {% endif %}
-      {% endfor %}
-  </nav>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    {% for page_num in blog_posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+    {% if blog_posts.page == page_num %}
+    <li class="page-item disabled">
+      <a class="page-link" href="{{ url_for('core.index', page=page_num) }}">{{ page_num }}</a></li>
+    </li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="{{ url_for('core.index', page=page_num) }}">{{ page_num }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+</nav>
 </div>
 </div>
 

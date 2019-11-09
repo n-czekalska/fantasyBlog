@@ -3,7 +3,7 @@ from flask import render_template,url_for,redirect,request,Blueprint
 from flask_login import login_user, current_user, logout_user, login_required
 from fantasyBlog import db
 from fantasyBlog.models import User, BlogPost
-from fantasyBlog.users.forms import RegistrationForm,LoginForm,UpdateUserForm, DisplayUserForm
+from fantasyBlog.users.forms import RegistrationForm,LoginForm,UpdateUserForm
 
 users = Blueprint('users',__name__)
 
