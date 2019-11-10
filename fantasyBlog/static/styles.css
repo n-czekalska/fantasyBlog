@@ -21,10 +21,8 @@ header {
 }
 
 #title-fantasy {
-  top: 16px;
   float: left;
 }
-
 
 .title {
   position: relative;
@@ -34,10 +32,30 @@ header {
   margin-bottom: 20px;
 }
 
+#title-username {
+  color: #000000;
+  position: relative;
+  text-align :center;
+}
+
+#title-posts {
+  color: #000000;
+  margin: auto;
+  display: inline ;
+}
 #container-right {
   position: relative;
   top: 8px;
   float: right;
+}
+
+a {
+  color: #000000;
+}
+
+a:hover {
+  text-decoration: none;
+  color: rgb(6, 156, 44);
 }
 
 .link {
@@ -49,11 +67,12 @@ header {
   display: inline-block;
   color: white;
 }
+
+.link:hover, .post-text-title:hover {
+  color: rgb(6, 156, 44);
+}
 .link-last {
     margin-right: 0px;
-  }
-a:hover {
-  text-decoration: none;
 }
 
 footer {
@@ -115,6 +134,10 @@ footer {
 	margin-left: auto;
   margin-right: auto;
   margin-top: 2%;
+}
+
+#single-line {
+  height: 50px;
 }
 
 .post-text-body
@@ -209,10 +232,10 @@ hr {
 @media (max-width: 575px) {
 
   .post-container {
-    height: 75%;
+    height: 500px;
+    margin-bottom: 5%;
   }
 }
-
 
 @media (min-width: 576px) {
 
@@ -222,7 +245,7 @@ hr {
   }
 
   .post-container {
-    height: 75%;
+    height: 400px;
   }
 }
 
@@ -232,8 +255,9 @@ hr {
   #footer-container {
     width: 768px;
   }
+
   .post-container {
-    height: 70%;
+    height: 300px;
   }
 }
 
@@ -244,7 +268,22 @@ hr {
   #footer-container {
     width: 1200px;
   }
+
   .post-container {
-    height: 70%;
+    height: 250px;
   }
+}
+
+.img-avatar {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: auto;
+}
+
+.img-avatar-home {
+  width: 70px;
+  height: 70px;
+  display: block;
+  float: right;
 }

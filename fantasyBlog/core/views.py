@@ -8,7 +8,7 @@ core = Blueprint('core',__name__)
 @core.route('/', methods=['POST','GET'])
 def index():
     page = request.args.get('page', 1, type=int)
-    blog_posts = BlogPost.query.order_by(BlogPost.date.desc()).paginate(page=page, per_page=5)
+    blog_posts = BlogPost.query.order_by(BlogPost.date.desc()).paginate(page=page, per_page=4)
     searchForm = SearchForm(request.form)
     if request.method == 'POST':
        

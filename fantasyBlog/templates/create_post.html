@@ -1,22 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
+    <div class="post-container" id="single-line">
+        <div class="title" id="title-username">Write your review:</div>
+    </div>
     <form class="form-group" method="POST">
         {{ form.hidden_tag() }}
-
         <div class="form-group">
             {{ form.title.label(class="form-control-label") }}
             {{ form.title(class="form-control form-control-lg ") }}
         </div>
+
         <div class="form-group">
             {{ form.content.label(class="form-control-label") }}
-            {{ form.content(class="form-control form-control-lg") }}
+            {{ form.content(class="form-control form-control-lg", rows="20", cols="50", id="summernote") }}
         </div>
         <div class="form-group">
-            {{ form.submit(class="btn btn-outline-info") }}
+            {{ form.submit(class="btn btn-outline-success") }}
         </div>
     </form>
-
+    <script>
+            $('#summernote').summernote({
+              placeholder: 'Write your content here',
+              tabsize: 2,
+              height: 500
+            });
+    </script>
 </div>
 
 {% endblock content %}
