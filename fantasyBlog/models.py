@@ -16,6 +16,7 @@ class User(db.Model,UserMixin):  #UserMixin.is_authenticated()
     avatar = db.Column(db.String(64),nullable=False,default='dragon.png')
     email = db.Column(db.String(64),unique=True,index=True)
     username = db.Column(db.String(64),unique=True,index=True)
+    about = db.Column(db.Text)
     password_hashed = db.Column(db.String(128))
 
     posts = db.relationship('BlogPost',backref='author',lazy=True)

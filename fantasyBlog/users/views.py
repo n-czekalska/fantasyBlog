@@ -56,12 +56,12 @@ def settings():
     if form.validate_on_submit():
 
         if form.avatar.data:
-            username = current_user.username
             picture = form.avatar.data
             current_user.avatar = picture
 
         current_user.username = form.username.data
         current_user.email = form.email.data
+        current_user.about = form.about.data
         avatar = form.avatar.data
         db.session.commit()
         return redirect(url_for('users.settings'))
@@ -69,6 +69,8 @@ def settings():
     elif request.method == "GET":
         form.username.data = current_user.username
         form.email.data = current_user.email
+        form.about.data = current_user.about
+        form.avatar.data = current_user.avatar
 
     avatar = url_for('static',filename='avatars/'+current_user.avatar)
     return render_template('settings.html',avatar=avatar,form=form)

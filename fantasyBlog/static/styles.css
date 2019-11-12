@@ -216,7 +216,7 @@ hr {
 
 #search {
   margin-top: 2%;
-  width: 100%;
+  width: 80%;
   border-color: lightgray;
   border-width: 1px;
   border-top: white;
@@ -228,6 +228,10 @@ hr {
   outline : none;
 }
 
+#submitButton {
+  border: none; 
+  background-color: transparent;
+}
 
 @media (max-width: 575px) {
 

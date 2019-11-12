@@ -5,6 +5,10 @@
     <div class="title" id="title-username">{{user.username}}</div>
     <img class="img-avatar" src="{{ url_for('static', filename='avatars/' + user.avatar) }}">
   </div>
+  <div class="post-container">
+    <div class="title" id="title-username">About author:</div>
+    <div class="post-text-body"> {{user.about}} </div>
+  </div>
 
   <div class="title" id="title-posts">Posts of this user:</div>
   <hr />

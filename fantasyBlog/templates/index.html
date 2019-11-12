@@ -28,8 +28,10 @@
       <hr />
       <form method="POST" style="display: inline;" action="{{ url_for('core.index') }}" name="search">
         {{ searchForm.hidden_tag() }}
-        {{ searchForm.search(size=20)}}
-        <input type="submit" value="Search">
+        {{ searchForm.search(size=20)}} 
+        <button type="submit" id="submitButton">
+            <img src="https://img.icons8.com/ios-glyphs/30/000000/search.png">
+        </button>
       </form>
     </div>
   </div>

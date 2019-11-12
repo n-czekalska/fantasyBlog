@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileAllowed, FileField #update avatar
-from wtforms import StringField, PasswordField, SubmitField, SelectField
+from wtforms import StringField, PasswordField, SubmitField, SelectField, TextField
 from wtforms.validators import DataRequired, Email, EqualTo
 from wtforms import ValidationError
 
@@ -31,6 +31,7 @@ class RegistrationForm(FlaskForm):
 class UpdateUserForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     username = StringField('Username', validators=[DataRequired()])
+    about = TextField('About Me:', validators=[DataRequired()])
     avatar = SelectField('Select avatar', choices=[('anvil.png', 'Anvil'), ('bag_of_coins.png','Bag of coins'),('pattern.png','Celtic knots'), ('clover.png','Clover'),
                                                    ('dragon.png', 'Dragon'),('feather.png','Feather'), ('fish.png','Fish'),('goblet.png','Goblet'),
                                                    ('helm.png','Helm'),('herb.png','Herb'),('hunting.png','Hunter'),('carpentry.png','Log and saw'),('mining.png','Miner'),
