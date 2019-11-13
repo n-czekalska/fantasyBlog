@@ -3,6 +3,7 @@
 :root{
   --font: 'Marcellus', serif;
   --gray-color: #252525;
+  --hover-color: #046d0a;
 }
 
 header {
@@ -48,6 +49,10 @@ header {
   top: 8px;
   float: right;
 }
+.btn {
+  float: right;
+  margin: 1%;
+}
 
 a {
   color: #000000;
@@ -55,7 +60,7 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: rgb(6, 156, 44);
+  color: var(--hover-color);
 }
 
 .link {
@@ -69,7 +74,7 @@ a:hover {
 }
 
 .link:hover, .post-text-title:hover {
-  color: rgb(6, 156, 44);
+  color:var(--hover-color);
 }
 .link-last {
     margin-right: 0px;
@@ -89,18 +94,6 @@ footer {
   background-color: var(--gray-color);
 }
 
-.footer-column {
-  position: relative;
-  width: 360px;
-  margin-right: 60px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.footer-column-last {
-  margin-right: 0px;
-}
-
 .picture-footer {
   position: relative;
   width: 140px;
@@ -110,6 +103,12 @@ footer {
   float: left;
   background-image: url(./book_icon.png);
   border-radius: 20%;
+}
+
+.read-post {
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
 .post
@@ -147,7 +146,8 @@ footer {
 	color: #000000;
 	font-size: 15px;
 	line-height: 18px;
-	margin-bottom: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .post-text-button
@@ -205,8 +205,6 @@ footer {
 }
 
 .post-sidebar {
-    padding-left: 15px;
-    padding-right: 50px;
     margin-top: 5%;
 }
 
@@ -233,6 +231,20 @@ hr {
   background-color: transparent;
 }
 
+.img-avatar {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: auto;
+}
+
+.img-avatar-home {
+  width: 70px;
+  height: 70px;
+  display: block;
+  float: right;
+}
+
 @media (max-width: 575px) {
 
   .post-container {
@@ -243,8 +255,7 @@ hr {
 
 @media (min-width: 576px) {
 
-  #header-container,
-  #footer-container {
+  #header-container {
     width: 576px;
   }
 
@@ -255,8 +266,7 @@ hr {
 
 @media (min-width: 768px) {
 
-  #header-container,
-  #footer-container {
+  #header-container {
     width: 768px;
   }
 
@@ -268,26 +278,11 @@ hr {
 
 @media (min-width: 1200px) {
 
-  #header-container,
-  #footer-container {
+  #header-container {
     width: 1200px;
   }
 
   .post-container {
     height: 250px;
   }
-}
-
-.img-avatar {
-  width: 200px;
-  height: 200px;
-  display: block;
-  margin: auto;
-}
-
-.img-avatar-home {
-  width: 70px;
-  height: 70px;
-  display: block;
-  float: right;
 }

@@ -1,28 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form method="POST">
-    <div class="row form-group">
-        {{form.hidden_tag()}}
-    </div>
-    <div class="form-group">
-        {{form.email.label}}
-        {{form.email(class="form-control")}}
-    </div>
-    <div class="form-group">
-        {{form.username.label}}
-        {{form.username(class="form-control")}}
-    </div>
-    <div class="form-group">
-        {{form.password.label}}
-        {{form.password(class="form-control")}}
-    </div>
-    <div class="form-group">
-        {{form.confirm.label}}
-        {{form.confirm(class="form-control")}}
-    </div>
-    <div class="form-group">
-        {{form.submit()}}
-    </div>
-</form>
+<div class="container">
+    <form method="POST">
+        <div class="row form-group">
+            {{form.hidden_tag()}}
+        </div>
+        <div class="form-group">
+            {{form.email.label}}
+            {{form.email(class="form-control")}}
+        </div>
+        <div class="form-group">
+            {{form.username.label}}
+            {{form.username(class="form-control")}}
+        </div>
+        <div class="form-group">
+            {{form.password.label}}
+            {{form.password(class="form-control")}}
+        </div>
+        <div class="form-group">
+            {{form.confirm.label}}
+            {{form.confirm(class="form-control")}}
+        </div>
+        <div class="form-group">
+            {{form.submit(class="btn btn-outline-success")}}
+        </div>
+    </form>
+</div>
 {% endblock %}
