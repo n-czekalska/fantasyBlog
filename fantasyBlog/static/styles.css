@@ -189,7 +189,7 @@ footer {
 }
 
 #post-container-0 {
-  background-image: url("./backgrounds/hobbiton.jpg");
+  background-image: url("./backgrounds/dragon.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -243,6 +243,10 @@ hr {
   height: 70px;
   display: block;
   float: right;
+}
+.custom404 {
+width: 100%;
+background-color: #f5f5f5;
 }
 
 @media (max-width: 575px) {
