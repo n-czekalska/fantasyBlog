@@ -29,9 +29,6 @@ class User(db.Model,UserMixin):  #UserMixin.is_authenticated()
     def check_password(self,password):
         return check_password_hash(self.password_hashed,password)
 
-    def __repr__(self):
-        return f"Username {self.username}"
-
 
 class BlogPost(db.Model):
     __searchable__ = ['title']
@@ -49,5 +46,3 @@ class BlogPost(db.Model):
         self.content = content
         self.user_id = user_id
 
-    def __repr__(self):
-        return f"Post ID: {self.id}"
